@@ -15,15 +15,25 @@
     </figure>
     {% endif %}
     <div class="card-position__body">
+      {% if i.statement %}
       <div class="card-position__section">
         <h3>Statement</h3>
         {{ i.statement | safe }}
       </div>
+      {% endif %}
 
+      {% if i.context %}
       <div class="card-position__section">
         <h3>Context</h3>
         {{ i.context | safe }}
       </div>
+      {% endif %}
+
+      {% if i.byline %}
+      <div class="card-position__section card-position__section_byline">
+        <i>— {{ i.byline | md(true) }}</i>
+      </div>
+      {% endif %}
 
       {% if i.links.length > 0 %}
       <div class="card-position__onward-headline">
