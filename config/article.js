@@ -1,7 +1,7 @@
 export default () => ({ // eslint-disable-line
 
   // link file UUID
-  id: '$uuid',
+  id: '8ba58c48-e73e-11e6-893c-082c54a7f539',
 
   // canonical URL of the published page
   // https://ig.ft.com/trump-cabinet/ get filled in by the ./configure script
