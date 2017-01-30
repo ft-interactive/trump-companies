@@ -3,6 +3,8 @@
 
 {% block article_body %}
 
+<p>{{ intro | safe }}</p>
+
 {# repeating card section starts #}
 {% for item in cards %}
 {{ Card(item) }}
