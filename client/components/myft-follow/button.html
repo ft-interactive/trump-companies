@@ -1,0 +1,28 @@
+{% macro FollowButton(conceptId, name, taxonomy, alternateText = 'Following', buttonText = 'Follow') %}
+<form class="follow-button-form {{ extraClasses }}" method="POST"
+  data-myft-ui="follow"
+  data-concept-id="{{ conceptId }}"
+  action="https://www.ft.com/__myft/api/core/followed/concept/{{ conceptId }}?method=put">
+  <input type="hidden" value="{{ name }}" name="name">
+  <input type="hidden" value="{{ taxonomy }}" name="taxonomy">
+  <button
+    aria-label="Add {{ name }}"
+    aria-pressed="false"
+    class="follow-button"
+    data-alternate-label="Remove {{name}}"
+    {% if alternateText %}
+      data-alternate-text="{{ alternateText }}"
+    {% else %}
+      {% if buttonText %}
+        data-alternate-text="{{ buttonText }}"
+      {% else %}
+        data-alternate-text="Added"
+      {% endif %}
+    {% endif %}
+    data-concept-id="{{ conceptId }}" {# duplicated here for tracking #}
+    data-trackable="follow"
+    title="Add {{ name }}"
+    type="submit"
+  >{% if buttonText %}{{buttonText}}{% else %}Add to myFT{% endif %}</button>
+</form>
+{% endmacro %}

@@ -1,0 +1,203 @@
+
+.follow-button-form {
+  display: inline;
+}
+
+.follow-button {
+  @include oButtons();
+  color: #26747a;
+  background-color: hsla(0,0%,100%,.4);
+  border: 1px solid rgba(38,116,122,.15);
+  padding-left: 26px;
+  position: relative;
+  float: right;
+
+  &:before {
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:plus?source=o-icons&tint=%2326747A,%2326747A&format=svg);
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:plus?source=o-icons&tint=%2326747A,%2326747A&format=png&width=12)\9;
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    margin: -6px 7px 0 0;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    background-color: transparent;
+    vertical-align: baseline;
+  }
+}
+
+.o-typography-body-wrapper h3 {
+  font-family: 'FinancierDisplayWeb',serif;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.o-typography-body-wrapper p {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  color: #505050 ;
+  letter-spacing: 0.02px;
+  line-height: 22px;
+}
+
+.card-position {
+  @include oCard;
+  background: #FDF8F2;
+  padding: 1em 30px;
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,.15);
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  @include oGridRespondTo(S) {
+  padding: 1em 40px;
+  }
+
+  &__position {
+    margin: 1em auto 0 !important;
+    color: #333;
+    font-size: 1.9em !important;
+    line-height: 1.1em !important;
+
+    @include oGridRespondTo(S) {
+    font-size: 2.5em !important;
+    margin: 1em auto .5em !important;
+    }
+  }
+
+  &__name {
+    @include oTypographySansBold(m);
+    color: getColor('grey-tint5');
+    font-size: 1.4em !important;
+    letter-spacing: 0;
+    margin-top: .1em !important;
+    margin-bottom: .1em !important;
+
+    @include oGridRespondTo(S) {
+    font-size: 1.8em !important;
+    letter-spacing: .01em;
+    }
+
+    & a {
+      color: getColor('grey-tint5');
+      border-bottom-color: transparent;
+    }
+
+    & a:hover {
+    color: #807970 !important;
+    }
+  }
+
+  &__section {
+    margin-top: 1em;
+
+    & h3 {
+      font-family: 'MetricWeb', sans-serif;
+      font-weight: 600;
+    }
+
+    &_byline {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 14px;
+      color: #26747A;
+      letter-spacing: 0.01px;
+      line-height: 22px;
+    }
+  }
+
+  &__image {
+    margin: 1em 0;
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  p[style*="text-align:right;"]{
+    margin-top: 1.5em;
+  }
+
+  p[style*="text-align:right;"] > a:first-child:last-child {
+      color: getColor('grey-tint5');
+      @include oTypographySans(m);
+      border-bottom-color: transparent;
+      &:hover {
+        color:#807970;
+    }
+
+    &:after {
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=o-icons&tint=%23000000,%23000000&format=svg);
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-right?source=o-icons&tint=%23000000,%23000000&format=png&width=30)\9;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    background-color: transparent;
+    vertical-align: baseline;
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    right: -13px;
+    margin-left: -13px;
+    margin-top: -10px;
+    }
+  }
+
+
+
+
+
+  &__onward-headline {
+    position: relative;
+    font-size: 1.1em !important;
+    margin: 1em 0 1.5em;
+    @include oTypographySansBold(m);
+    color: getColor('grey-tint5');
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: .25em;
+      border-top: .24em solid getColor('grey-tint5');
+      width: 10%;
+      bottom: -0.8em;
+      left: 0;
+    }
+  }
+
+  &__onward-links {
+    margin-bottom: 1.5em !important;
+
+    & li {
+      margin-bottom: 0.1em;
+
+      time {
+        padding-top: 0;
+      }
+    }
+
+  }
+
+  &__onward-link {
+    color: getColor('grey-tint5') !important;
+    border-bottom: none !important;
+    @include oTypographySansBold(s);
+    font-size: 17px !important;
+
+
+
+    &:hover {
+    color: #807970 !important;
+    border-bottom-color: transparent;
+    }
+  }
+}

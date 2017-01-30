@@ -1,0 +1,43 @@
+{% from "components/myft-follow/button.html" import FollowButton -%}
+
+{% macro Card(i) %}
+  {% if i.name %}
+  <div class="card-position" data-o-component="o-card">
+    <h2 class="card-position__name">{% if i.topicid %}<a href="https://www.ft.com/stream/peopleId/{{ i.topicid }}">{{ i.name }}{% if i.titlecompany %}, {{ i.titlecompany }} {% endif %}</a>  {{ FollowButton(i.topicid, i.name, 'people')}}{% else %}{{ i.name }}{% if i.titlecompany %}, {{ i.titlecompany }} {% endif %}{% endif %}</h2>
+    {% if i.picurl %}
+    <figure class="card-position__image">
+      <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F{{ i.picurl }}?source=ig&fit=scale-down&width=700"></img>
+        {% if i.picsource %}
+        <figcaption class="o-typography-caption">
+          &#xA9;{{ i.picsource }}
+        </figcaption>
+        {% endif %}
+    </figure>
+    {% endif %}
+    <div class="card-position__body">
+      <div class="card-position__section">
+        <h3>Statement</h3>
+        {{ i.statement | safe }}
+      </div>
+
+      <div class="card-position__section">
+        <h3>Context</h3>
+        {{ i.context | safe }}
+      </div>
+
+      {% if i.links.length > 0 %}
+      <div class="card-position__onward-headline">
+        More on {{i.name}}:
+      </div>
+      <ul class="card-position__onward-links">
+        {% for link in i.links %}
+        <li>
+          <a class="card-position__onward-link" href="{{ link.linkURL }}">{{ link.linkHeadline }}</a> <time data-o-component="o-date" class="o-date o-card__timestamp article__timestamp" datetime="{{ link.linkPubDate | isotime }}">{{ link.linkPubDate | ftdate }}</time>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+{% endmacro %}

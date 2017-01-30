@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% from "components/card/template.html" import Card -%}
+
+{% block article_body %}
+
+{# repeating card section starts #}
+{% for item in cards %}
+{{ Card(item) }}
+{% endfor %}
+{# repeating card section ends #}
+
+{% endblock %}
