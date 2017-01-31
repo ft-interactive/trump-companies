@@ -59,18 +59,18 @@ export default () => ({ // eslint-disable-line
   */
   // General social
   socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F867b4c1e-b627-11e6-961e-a1acd97f622d?source=ig&fit=scale-down&width=1200',
-  // socialHeadline: '',
- // socialSummary:  'A guide to Donald Trump’s cabinet picks',
+  socialHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
+ socialSummary:  'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   // TWITTER
   // twitterImage: '',
   //twitterCreator: '@ft',
-  tweetText: '',
-  // twitterHeadline:  '',
+  tweetText: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
+  twitterHeadline:  'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   // FACEBOOK
   // facebookImage: '',
-  // facebookHeadline: '',
+  facebookHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   tracking: {
 
