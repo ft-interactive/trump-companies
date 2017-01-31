@@ -3,7 +3,8 @@
 {% macro Card(i) %}
   {% if i.company %}
   <div class="card-position" data-o-component="o-card">
-    <h2 class="card-position__name">{% if i.topicid %}<a href="https://www.ft.com/topics/organisations/{{ i.topicid }}">{{ i.company }}</a>  {{ FollowButton(i.topicid, i.company, 'organisations')}}{% else %}{{ i.company }}{% endif %}<br />{% if i.nametitle %}{{ i.nametitle }}{% endif %}</h2>
+    <h2 class="card-position__name" id="card-position__name_company">{% if i.topicid %}<a href="https://www.ft.com/topics/organisations/{{ i.topicid }}">{{ i.company }}</a>  {{ FollowButton(i.topicid, i.company, 'organisations')}}{% else %}{{ i.company }}{% endif %}</h2>
+    <h2 class="card-position__name" id="card-position__name_nameTitle">{% if i.nametitle %}{{ i.nametitle }}{% endif %}</h2>
     {% if i.picurl %}
     <figure class="card-position__image">
       <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F{{ i.picurl }}?source=ig&fit=scale-down&width=700"></img>
