@@ -65,6 +65,8 @@ export default async function() {
     intro,
     headline,
     summary,
+    description,
+    title,
     pageText,
     cards,
     flags,
