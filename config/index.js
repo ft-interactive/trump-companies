@@ -5,7 +5,7 @@ import axios from 'axios';
 export default async function() {
   const d = await article();
   const flags = await getFlags();
-  const endpoint = 'http://bertha.ig.ft.com/view/publish/gss/1r_TIJPjUu1xOVk3SiOzF1hSXEyZbP2zedASR9wDYCv8/data,pageText';
+  const endpoint = 'http://bertha.ig.ft.com/view/publish/gss/1r_TIJPjUu1xOVk3SiOzF1hSXEyZbP2zedASR9wDYCv8/edit,pageText';
   let cards = {};
   let data;
   let pageText;
@@ -14,7 +14,7 @@ export default async function() {
 
   try {
     const res = await axios(endpoint);
-    data = res.data.data;
+    data = res.data.edit;
     pageText = res.data.pageText;
     intro = res.data.pageText.filter((d) => d.name === 'lede')[0].value;
     headline = res.data.pageText.filter((d) => d.name === 'head')[0].value;
