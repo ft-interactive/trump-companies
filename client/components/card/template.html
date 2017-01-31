@@ -1,9 +1,9 @@
 {% from "components/myft-follow/button.html" import FollowButton -%}
 
 {% macro Card(i) %}
-  {% if i.name %}
+  {% if i.company %}
   <div class="card-position" data-o-component="o-card">
-    <h2 class="card-position__name">{% if i.topicid %}<a href="https://www.ft.com/stream/peopleId/{{ i.topicid }}">{{ i.name }}{% if i.titlecompany %}, {{ i.titlecompany }} {% endif %}</a>  {{ FollowButton(i.topicid, i.name, 'people')}}{% else %}{{ i.name }}{% if i.titlecompany %}, {{ i.titlecompany }} {% endif %}{% endif %}</h2>
+    <h2 class="card-position__name">{% if i.topicid %}<a href="https://www.ft.com/topics/organisations/{{ i.topicid }}">{{ i.company }}</a>  {{ FollowButton(i.topicid, i.company, 'organisations')}}{% else %}{{ i.company }}{% endif %}<br />{% if i.nametitle %}{{ i.nametitle }}{% endif %}</h2>
     {% if i.picurl %}
     <figure class="card-position__image">
       <img alt="" src="https://image.webservices.ft.com/v1/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F{{ i.picurl }}?source=ig&fit=scale-down&width=700"></img>
@@ -17,14 +17,14 @@
     <div class="card-position__body">
       {% if i.statement %}
       <div class="card-position__section">
-        <h3>Statement</h3>
+        <h3>What they said</h3>
         {{ i.statement | safe }}
       </div>
       {% endif %}
 
       {% if i.context %}
       <div class="card-position__section">
-        <h3>Context</h3>
+        <h3>Why they said it</h3>
         {{ i.context | safe }}
       </div>
       {% endif %}
