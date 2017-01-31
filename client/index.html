@@ -3,7 +3,7 @@
 
 {% block article_body %}
 
-<p>{{ intro | safe }}</p>
+<p>{{ intro | md }}</p>
 
 {# repeating card section starts #}
 {% for item in cards %}

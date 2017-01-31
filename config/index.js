@@ -11,6 +11,7 @@ export default async function() {
   let pageText;
   let intro;
   let headline;
+  let summary;
 
   try {
     const res = await axios(endpoint);
@@ -18,6 +19,7 @@ export default async function() {
     pageText = res.data.pageText;
     intro = res.data.pageText.filter((d) => d.name === 'lede')[0].value;
     headline = res.data.pageText.filter((d) => d.name === 'head')[0].value;
+    summary = res.data.pageText.filter((d) => d.name === 'standfirst')[0].value;
   } catch (e) {
     console.log('Error getting content from Bertha', e);
   }
@@ -57,6 +59,8 @@ export default async function() {
   return {
     ...d,
     intro,
+    headline,
+    summary,
     pageText,
     cards,
     flags,
