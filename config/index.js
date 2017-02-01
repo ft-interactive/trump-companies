@@ -1,6 +1,7 @@
 import article from './article';
 import getFlags from './flags';
 import axios from 'axios';
+import _ from 'underscore';
 
 export default async function() {
   const d = await article();
@@ -61,6 +62,20 @@ export default async function() {
   } catch (e) {
     console.error(e);
   }
+
+  const cardsByIndustry = _.groupBy(cards, 'industry'); // group cards by industry
+
+  // order industries by spreadsheet tab `industries`
+  cards = industries.map((industry) => {
+    const industryName = industry.industryname;
+    const industryDisplayName = industry.industrydisplayname;
+
+    return {
+      industryName,
+      industryDisplayName,
+      items: cardsByIndustry[industryName],
+    }
+  })
 
   return {
     ...d,

@@ -6,8 +6,11 @@
 <p>{{ intro | md }}</p>
 
 {# repeating card section starts #}
-{% for item in cards %}
-{{ Card(item) }}
+{% for card in cards %}
+  <h1 class="card-position__position">{{ card.industryDisplayName }}</h1>
+  {% for item in card.items %}
+  {{ Card(item) }}
+  {% endfor %}
 {% endfor %}
 {# repeating card section ends #}
 

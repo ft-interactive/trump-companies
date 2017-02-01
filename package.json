@@ -85,5 +85,8 @@
     "prestart": "npm run clean",
     "start": "nodemon --watch gulpfile.babel.js --exec 'gulp watch'",
     "test": "npm run lint && npm run build"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }
