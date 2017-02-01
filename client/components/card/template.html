@@ -1,8 +1,8 @@
 {% from "components/myft-follow/button.html" import FollowButton -%}
 
-{% macro Card(i) %}
+{% macro Card(i, index) %}
   {% if i.company %}
-  <div class="card-position" data-o-component="o-card">
+  <div class="card-position o-expander" data-o-component="o-card o-expander" {% if index != 1 %}data-o-expander-shrink-to="1" data-o-expander-count-selector=".card-position__section" data-o-expander-expanded-toggle-text="Read less" data-o-expander-collapsed-toggle-text="Read more" {% endif %}>
     <h2 class="card-position__name" id="card-position__name_company">{% if i.topicid %}<a href="https://www.ft.com/topics/organisations/{{ i.topicid }}">{{ i.company }}</a>  {{ FollowButton(i.topicid, i.company, 'organisations')}}{% else %}{{ i.company }}{% endif %}</h2>
     <h2 class="card-position__name" id="card-position__name_nameTitle">{% if i.nametitle %}{{ i.nametitle }}{% endif %}</h2>
     {% if i.picurl %}
@@ -15,26 +15,30 @@
         {% endif %}
     </figure>
     {% endif %}
-    <div class="card-position__body">
-      {% if i.statement %}
-      <div class="card-position__section">
-        <h3>What they said</h3>
-        {{ i.statement | safe }}
-      </div>
-      {% endif %}
+    <div class="o-expander__content">
+      <div class="card-position__body">
+        {% if i.statement %}
+        <div class="card-position__section">
+          <h3>What they said</h3>
+          {{ i.statement | safe }}
+        </div>
+        {% endif %}
 
-      {% if i.context %}
-      <div class="card-position__section">
-        <h3>Why they said it</h3>
-        {{ i.context | safe }}
-      </div>
-      {% endif %}
+        {% if i.context %}
+        <div class="card-position__section">
+          <h3>Why they said it</h3>
+          {{ i.context | safe }}
+        </div>
+        {% endif %}
 
-      {% if i.byline %}
-      <div class="card-position__section card-position__section_byline">
-        <i>— {{ i.byline | md(true) }}</i>
+        {% if i.byline %}
+        <div class="card-position__section card-position__section_byline">
+          <i>— {{ i.byline | md(true) }}</i>
+        </div>
+        {% endif %}
+
+        <a class="o-expander__toggle o--if-js">Toggle</a>
       </div>
-      {% endif %}
 
       {% if i.links.length > 0 %}
       <div class="card-position__onward-headline">

@@ -9,7 +9,7 @@
 {% for card in cards %}
   <h1 class="card-position__position">{{ card.industryDisplayName }}</h1>
   {% for item in card.items %}
-  {{ Card(item) }}
+  {{ Card(item, loop.index) }}
   {% endfor %}
 {% endfor %}
 {# repeating card section ends #}
