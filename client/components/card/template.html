@@ -2,7 +2,7 @@
 
 {% macro Card(i, index) %}
   {% if i.company %}
-  <div class="card-position o-expander" data-o-component="o-card o-expander" {% if index != 1 %}data-o-expander-shrink-to="1" data-o-expander-count-selector=".card-position__section" data-o-expander-expanded-toggle-text="Read less" data-o-expander-collapsed-toggle-text="Read more" {% endif %}>
+  <div class="card-position o-expander" data-o-component="o-card o-expander" {% if index != '11' %}data-o-expander-shrink-to="1" data-o-expander-count-selector=".card-position__section" data-o-expander-expanded-toggle-text="Read less" data-o-expander-collapsed-toggle-text="Read more" {% endif %}>
     <h2 class="card-position__name" id="card-position__name_company">{% if i.topicid %}<a href="https://www.ft.com/stream/organisationsId/{{ i.topicid }}">{{ i.company }}</a>  {{ FollowButton(i.topicid, i.company, 'organisations')}}{% else %}{{ i.company }}{% endif %}</h2>
     <h2 class="card-position__name" id="card-position__name_nameTitle">{% if i.nametitle %}{{ i.nametitle }}{% endif %}</h2>
     {% if i.picurl %}
