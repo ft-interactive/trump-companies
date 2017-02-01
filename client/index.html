@@ -7,9 +7,10 @@
 
 {# repeating card section starts #}
 {% for card in cards %}
+  {% set loopcounter = loop %}
   <h1 class="card-position__position">{{ card.industryDisplayName }}</h1>
   {% for item in card.items %}
-  {{ Card(item, loop.index) }}
+  {{ Card(item, loopcounter.index) }}
   {% endfor %}
 {% endfor %}
 {# repeating card section ends #}
