@@ -29,5 +29,5 @@ export default () => ({ // eslint-disable-line
     3a499586-b2e0-11e4-a058-00144feab7de
 
   */
-  comments: false,
+  comments: true,
 });

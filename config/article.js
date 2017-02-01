@@ -4,8 +4,8 @@ export default () => ({ // eslint-disable-line
   id: '8ba58c48-e73e-11e6-893c-082c54a7f539',
 
   // canonical URL of the published page
-  // https://ig.ft.com/trump-business-reaction/ get filled in by the ./configure script
-  url: 'https://ig.ft.com/trump-business-reaction/',
+  // https://ig.ft.com/sites/trump-business-reaction/ get filled in by the ./configure script
+  url: 'https://ig.ft.com/sites/trump-business-reaction/',
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
