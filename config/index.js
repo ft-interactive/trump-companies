@@ -14,12 +14,13 @@ export default async function() {
   let summary;
   let title;
   let description;
+  let industries;
 
   try {
     const res = await axios(endpoint);
     data = res.data.edit;
     pageText = res.data.pageText;
-    industries = rs.data.industries;
+    industries = res.data.industries;
     intro = res.data.pageText.filter((d) => d.name === 'lede')[0].value;
     headline = res.data.pageText.filter((d) => d.name === 'head')[0].value;
     summary = res.data.pageText.filter((d) => d.name === 'standfirst')[0].value;
