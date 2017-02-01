@@ -37,21 +37,23 @@
         </div>
         {% endif %}
 
-        <a class="o-expander__toggle o--if-js">Toggle</a>
-      </div>
+        {% if i.links.length > 0 %}
+        <div class="card-position__section">
+          <div class="card-position__onward-headline">
+            More on {{i.company}}:
+          </div>
+          <ul class="card-position__onward-links">
+            {% for link in i.links %}
+            <li>
+              <a class="card-position__onward-link" href="{{ link.linkURL }}">{{ link.linkHeadline }}</a> <time data-o-component="o-date" class="o-date o-card__timestamp article__timestamp" datetime="{{ link.linkPubDate | isotime }}">{{ link.linkPubDate | ftdate }}</time>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
 
-      {% if i.links.length > 0 %}
-      <div class="card-position__onward-headline">
-        More on {{i.company}}:
+        <div class="o-expander__toggle o--if-js">Read more</div>
       </div>
-      <ul class="card-position__onward-links">
-        {% for link in i.links %}
-        <li>
-          <a class="card-position__onward-link" href="{{ link.linkURL }}">{{ link.linkHeadline }}</a> <time data-o-component="o-date" class="o-date o-card__timestamp article__timestamp" datetime="{{ link.linkPubDate | isotime }}">{{ link.linkPubDate | ftdate }}</time>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
     </div>
   </div>
   {% endif %}

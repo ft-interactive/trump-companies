@@ -46,6 +46,18 @@
   line-height: 22px;
 }
 
+.o-typography-body-wrapper .o-expander__toggle.o--if-js {
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+  color: getColor('teal-1');
+}
+
+.o-typography-body-wrapper .o-expander__toggle i {
+  width: 30px;
+  height: 30px;
+}
+
 .card-position {
   @include oCard;
   background: #FDF8F2;
@@ -114,7 +126,7 @@
 
     & p{
       font-size: 1em;
-      line-height:1.4em; 
+      line-height:1.4em;
     }
 
     &_byline {
