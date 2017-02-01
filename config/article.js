@@ -4,8 +4,8 @@ export default () => ({ // eslint-disable-line
   id: '8ba58c48-e73e-11e6-893c-082c54a7f539',
 
   // canonical URL of the published page
-  // https://ig.ft.com/trump-cabinet/ get filled in by the ./configure script
-  url: 'https://ig.ft.com/sites/trump-companies',
+  // https://ig.ft.com/trump-business-reaction/ get filled in by the ./configure script
+  url: 'https://ig.ft.com/trump-business-reaction/',
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
@@ -58,18 +58,18 @@ export default () => ({ // eslint-disable-line
         optional social meta data?
   */
   // General social
-  socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.prod.s3.amazonaws.com%2F867b4c1e-b627-11e6-961e-a1acd97f622d?source=ig&fit=scale-down&width=1200',
+  socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Ftrump-business-reaction%2Fimages%2Fsocial_twitter.jpg?source=ig&width=1200',
   socialHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
   socialSummary: 'From Elon Musk and Jeff Bezos to Warren Buffett: here\'s what they\'re saying.',
 
   // TWITTER
-  // twitterImage: '',
+  twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Ftrump-business-reaction%2Fimages%2Fsocial_twitter.jpg?source=ig&width=1200',
   //twitterCreator: '@ft',
   tweetText: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
   twitterHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   // FACEBOOK
-  // facebookImage: '',
+  facebookImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Ftrump-business-reaction%2Fimages%2Fsocial_facebook.jpg?source=ig&width=1200',
   facebookHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   tracking: {
