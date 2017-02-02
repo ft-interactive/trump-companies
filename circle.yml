@@ -23,9 +23,9 @@ deployment:
     branch: /.*/
     commands:
       - > if [-n "${deployProd}" ]; then
-            npm run deploy:preview
+            npm run deploy:preview;
           else
-            npm run deploy:confirm
+            npm run deploy:confirm;
           fi
 
 general:
