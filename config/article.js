@@ -58,18 +58,18 @@ export default () => ({ // eslint-disable-line
         optional social meta data?
   */
   // General social
-  socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Ftrump-business-reaction%2Fimages%2Fsocial_twitter.jpg?source=ig&width=1200',
+  socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Fsites%2Ftrump-business-reaction%2Fimages%2Fsocial_twitter.jpg?source=ig&width=1200',
   socialHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
   socialSummary: 'From Elon Musk and Jeff Bezos to Warren Buffett: here\'s what they\'re saying.',
 
   // TWITTER
-  twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Ftrump-business-reaction%2Fimages%2Fsocial_twitter.jpg?source=ig&width=1200',
+  twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Fsites%2Ftrump-business-reaction%2Fimages%2Fsocial_twitter.jpg?source=ig&width=1200',
   //twitterCreator: '@ft',
   tweetText: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
   twitterHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   // FACEBOOK
-  facebookImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Ftrump-business-reaction%2Fimages%2Fsocial_facebook.jpg?source=ig&width=1200',
+  facebookImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fig.ft.com%2Fsites%2Ftrump-business-reaction%2Fimages%2Fsocial_facebook.jpg?source=ig&width=1200',
   facebookHeadline: 'Business and Donald Trump: Here\'s what some of the biggest US companies are saying about the new president',
 
   tracking: {
