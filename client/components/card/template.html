@@ -25,14 +25,14 @@
       <div class="card-position__body">
         {% if i.statement %}
         <div class="card-position__section">
-          <h3>What they said</h3>
+          <h3>What {{ i.pronoun }} said</h3>
           {{ i.statement | safe }}
         </div>
         {% endif %}
 
         {% if i.context %}
         <div class="card-position__section">
-          <h3>Why they said it</h3>
+          <h3>Why {{ i.pronoun }} said it</h3>
           {{ i.context | safe }}
         </div>
         {% endif %}

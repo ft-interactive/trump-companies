@@ -35,6 +35,22 @@ export default async function() {
 
   try {
     const results = await Promise.all(cards.map(async function(card) {
+      card.pronoun = (card.gender === 'male' ? 'he' : 'she');
+      switch(card.gender) {
+        case 'male':
+          card.pronoun = 'he';
+          break;
+        case 'female':
+          card.pronoun = 'she';
+          break;
+        case 'multiple':
+          card.pronoun = 'they';
+          break;
+        default:
+          card.pronoun - 'they';
+          break;
+      }
+
       card.links = await Promise.all(card.links.map(async function(link) {
         const linkURL = link;
         let linkPubDate = '';
