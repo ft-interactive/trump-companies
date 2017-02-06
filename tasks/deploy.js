@@ -132,7 +132,7 @@ process.on('unhandledRejection', error => {
 
 
   // await confirmation
-  if (argv.confirm || await input.confirm('Continue?', { default: false })) {
+  if (argv.confirm || argv.preview || await input.confirm('Continue?', { default: false })) {
     let uploadCount = 0;
 
     const spinner = ora({
