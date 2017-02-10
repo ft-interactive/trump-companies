@@ -56,9 +56,12 @@ Array.from(readMoreButtons).forEach(readMoreButton => {
   readMoreButton.addEventListener('click', (e) => {
     const id = e.target.getAttribute('data-concept-id');
     const category = 'readMoreButton';
-    const action = 'click';
+    let action = 'expand';
+    if (e.target.getAttribute('aria-expanded') === 'false') {
+      action = 'collapse';
+    }
 
     sendEvent(id, category, action);
-    // console.log(`clicked on read more button for ${id}`);
+    // console.log(`${action} on read more button for ${id}`);
   });
 });
