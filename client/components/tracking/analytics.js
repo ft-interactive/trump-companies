@@ -30,7 +30,7 @@ Array.from(followButtons).forEach(followButton => {
     const category = 'followButton';
     const action = 'click';
 
-    sendEvent(id, category, action);
+    sendEvent(category, action, id);
     // console.log(`followed ${id}`);
   });
 });
@@ -44,7 +44,7 @@ Array.from(onwardJourneyLinks).forEach(onwardLink => {
     const category = 'onwardLink';
     const action = 'click';
 
-    sendEvent(id, category, action);
+    sendEvent(category, action, id);
     // console.log(`clicked on onward link ${id}`);
   });
 });
@@ -61,7 +61,7 @@ Array.from(readMoreButtons).forEach(readMoreButton => {
       action = 'collapse';
     }
 
-    sendEvent(id, category, action);
+    sendEvent(category, action, id);
     // console.log(`${action} on read more button for ${id}`);
   });
 });
