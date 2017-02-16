@@ -61,9 +61,9 @@ Array.from(readMoreButtons).forEach(readMoreButton => {
   readMoreButton.addEventListener('click', (e) => {
     const id = e.target.getAttribute('data-concept-id');
     const category = 'readMoreButton';
-    let action = 'expand';
+    let action = 'collapse';
     if (e.target.getAttribute('aria-expanded') === 'false') {
-      action = 'collapse';
+      action = 'expand';
     }
 
     const gaEventDetails = {

@@ -29,8 +29,7 @@ queue('https://origami-build.ft.com/v2/bundles/js?modules=o-tracking&export=oTra
   oTracking.init({
     server: 'https://spoor-api.ft.com/px.gif',
     system: {
-      // is_live: typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false
-      is_live: false,
+      is_live: typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false
     },
     context: { product: properties.product || 'IG' }
   });
