@@ -17,3 +17,5 @@
             - template.html
 
 */
+
+import './components/tracking/analytics';
