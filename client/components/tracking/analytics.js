@@ -1,6 +1,6 @@
 /* eslint max-len: ["error", { "ignoreStrings": true }]*/
 
-function sendEvent(category, action, id) {
+function sendEvent(category, action, id, service) {
   const oTrackingEventDetails = {
     detail: {
       category,
@@ -18,8 +18,13 @@ function sendEvent(category, action, id) {
     transport: 'beacon',
   };
 
-  document.body.dispatchEvent(new CustomEvent('oTracking.event', oTrackingEventDetails));
-  ga('send', gaEventDetails);
+  if (service === 'ft' || service === 'both') {
+    document.body.dispatchEvent(new CustomEvent('oTracking.event', oTrackingEventDetails));
+  }
+
+  if (service === 'ga' || service === 'both') {
+    ga('send', gaEventDetails);
+  }
 }
 
 // track clicks on the follow button
@@ -30,7 +35,7 @@ Array.from(followButtons).forEach(followButton => {
     const category = 'followButton';
     const action = 'click';
 
-    sendEvent(category, action, id);
+    sendEvent(category, action, id, 'ga');
     // console.log(`followed ${id}`);
   });
 });
@@ -44,7 +49,7 @@ Array.from(onwardJourneyLinks).forEach(onwardLink => {
     const category = 'onwardLink';
     const action = 'click';
 
-    sendEvent(category, action, id);
+    sendEvent(category, action, id, 'ga');
     // console.log(`clicked on onward link ${id}`);
   });
 });
@@ -61,7 +66,24 @@ Array.from(readMoreButtons).forEach(readMoreButton => {
       action = 'collapse';
     }
 
-    sendEvent(category, action, id);
+    const gaEventDetails = {
+      hitType: 'event',
+      eventCategory: category,
+      eventAction: action,
+      eventLabel: id,
+      transport: 'beacon',
+    };
+    ga('send', gaEventDetails);
+
+    const oTrackingEventDetails = {
+      detail: {
+        category: 'cta',
+        action: 'click',
+        id,
+      },
+      bubbles: true,
+    };
+    document.body.dispatchEvent(new CustomEvent('oTracking.event', oTrackingEventDetails));
     // console.log(`${action} on read more button for ${id}`);
   });
 });
