@@ -1,15 +1,6 @@
 /* eslint max-len: ["error", { "ignoreStrings": true }]*/
 
-function sendEvent(category, action, id, service) {
-  const oTrackingEventDetails = {
-    detail: {
-      category,
-      action,
-      id,
-    },
-    bubbles: true,
-  };
-
+function sendEvent(category, action, id) {
   const gaEventDetails = {
     hitType: 'event',
     eventCategory: category,
@@ -18,13 +9,7 @@ function sendEvent(category, action, id, service) {
     transport: 'beacon',
   };
 
-  if (service === 'ft' || service === 'both') {
-    document.body.dispatchEvent(new CustomEvent('oTracking.event', oTrackingEventDetails));
-  }
-
-  if (service === 'ga' || service === 'both') {
-    ga('send', gaEventDetails);
-  }
+  ga('send', gaEventDetails);
 }
 
 // track clicks on the follow button
@@ -35,7 +20,7 @@ Array.from(followButtons).forEach(followButton => {
     const category = 'followButton';
     const action = 'click';
 
-    sendEvent(category, action, id, 'ga');
+    sendEvent(category, action, id);
     // console.log(`followed ${id}`);
   });
 });
@@ -49,14 +34,14 @@ Array.from(onwardJourneyLinks).forEach(onwardLink => {
     const category = 'onwardLink';
     const action = 'click';
 
-    sendEvent(category, action, id, 'ga');
+    sendEvent(category, action, id);
     // console.log(`clicked on onward link ${id}`);
   });
 });
 
 
 // track clicks on the read more buttons (to expand/collapse cards)
-const readMoreButtons = document.querySelectorAll('#card-position__readmore');
+const readMoreButtons = document.querySelectorAll('.card-position__readmore');
 Array.from(readMoreButtons).forEach(readMoreButton => {
   readMoreButton.addEventListener('click', (e) => {
     const id = e.target.getAttribute('data-concept-id');
@@ -66,24 +51,7 @@ Array.from(readMoreButtons).forEach(readMoreButton => {
       action = 'expand';
     }
 
-    const gaEventDetails = {
-      hitType: 'event',
-      eventCategory: category,
-      eventAction: action,
-      eventLabel: id,
-      transport: 'beacon',
-    };
-    ga('send', gaEventDetails);
-
-    const oTrackingEventDetails = {
-      detail: {
-        category: 'cta',
-        action: 'click',
-        id,
-      },
-      bubbles: true,
-    };
-    document.body.dispatchEvent(new CustomEvent('oTracking.event', oTrackingEventDetails));
+    sendEvent(category, action, id);
     // console.log(`${action} on read more button for ${id}`);
   });
 });

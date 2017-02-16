@@ -48,8 +48,10 @@
 
 .o-typography-body-wrapper .o-expander__toggle.o--if-js {
   font-size: 1.3em;
+  font-family: MetricWeb,sans-serif;
   font-weight: 600;
   text-align: center;
+  margin: 0 auto;
   color: getColor('teal-1');
 }
 
