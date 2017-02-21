@@ -22,7 +22,7 @@ deployment:
   s3: # this is just a custom name, could be anything
     branch: /.*/
     commands:
-      - if [[ $isPreview == "true" ]]; then npm run deploy:preview; else npm run deploy:confirm; fi
+      - if [[ $PREVIEW == "true" ]]; then npm run deploy:preview; else npm run deploy:confirm; fi
 
 general:
   artifacts:
