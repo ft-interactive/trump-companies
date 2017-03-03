@@ -1,6 +1,6 @@
 # [trump-companies](https://ig.ft.com/trump-companies/)
 
-> [a listicle-type story with company's reactions to the beginning of Trump's presidency](https://ig.ft.com/sites/trump-companies/)
+> [a listicle-type story with company's reactions to the beginning of Trump's presidency](https://ig.ft.com/sites/trump-business-reaction/)
 
 [![Build Status][circle-image]][circle-url] [![Dependency Status][devdeps-image]][devdeps-url]
 
